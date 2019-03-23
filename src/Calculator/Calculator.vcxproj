@@ -15,6 +15,10 @@
     <AppxOSMaxVersionTestedReplaceManifestVersion>false</AppxOSMaxVersionTestedReplaceManifestVersion>
     <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
     <AppxDefaultResourceQualifierUAP_Contrast>black</AppxDefaultResourceQualifierUAP_Contrast>
+    <AppxBundle>Always</AppxBundle>
+    <PackageCertificateKeyFile>TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxPackageSigningEnabled>true</AppxPackageSigningEnabled>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <!-- This has to be exactly in this place for this to work -->
@@ -126,21 +130,13 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <PropertyGroup Condition="Exists('TemporaryKey.pfx')">
-    <PackageCertificateKeyFile>TemporaryKey.pfx</PackageCertificateKeyFile>
-    <AppxPackageSigningEnabled>true</AppxPackageSigningEnabled>
-    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
-  </PropertyGroup>
-  <PropertyGroup Condition="!Exists('TemporaryKey.pfx')">
-    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
-    <AppxBundle>Never</AppxBundle>
-  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
       <AdditionalOptions>/bigobj /await /std:c++17 </AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
@@ -148,6 +144,8 @@
       <AdditionalOptions>/bigobj /await /std:c++17 </AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
@@ -155,6 +153,8 @@
       <AdditionalOptions>/bigobj /await /std:c++17 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <AdditionalDependencies>WindowsApp.lib;$(VC_ReferencesPath_VC_ARM)\pgort.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -165,6 +165,8 @@
       <AdditionalOptions>/bigobj /await /std:c++17 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <AdditionalDependencies>WindowsApp.lib;$(VC_ReferencesPath_VC_ARM)\pgort.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -175,6 +177,8 @@
       <AdditionalOptions>/bigobj /await /std:c++17 </AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -182,6 +186,8 @@
       <AdditionalOptions>/bigobj /await /std:c++17 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <AdditionalDependencies>WindowsApp.lib;$(VC_ReferencesPath_VC_x86)\pgort.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -192,6 +198,8 @@
       <AdditionalOptions>/bigobj /await /std:c++17 </AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -199,6 +207,8 @@
       <AdditionalOptions>/bigobj /await /std:c++17 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <AdditionalDependencies>WindowsApp.lib;$(VC_ReferencesPath_VC_x64)\pgort.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -344,7 +354,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup Condition="Exists('TemporaryKey.pfx')">
+  <ItemGroup>
     <None Include="TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -844,7 +854,7 @@
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see https://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Microsoft.WindowsCalculator.PGO.1.0.2\build\native\Microsoft.WindowsCalculator.PGO.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.WindowsCalculator.PGO.1.0.2\build\native\Microsoft.WindowsCalculator.PGO.props'))" />
     <Error Condition="!Exists('..\..\packages\Microsoft.WindowsCalculator.PGO.1.0.2\build\native\Microsoft.WindowsCalculator.PGO.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.WindowsCalculator.PGO.1.0.2\build\native\Microsoft.WindowsCalculator.PGO.targets'))" />
