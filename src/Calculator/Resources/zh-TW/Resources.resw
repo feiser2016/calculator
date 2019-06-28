@@ -909,6 +909,14 @@
     <value>右括弧</value>
     <comment>Screen reader prompt for the Calculator ")" button on the scientific operator keypad</comment>
   </data>
+  <data name="Format_OpenParenthesisCountAutomationNamePrefix" xml:space="preserve">
+    <value>左括弧計數 %1</value>
+    <comment>{Locked="%1"} Screen reader prompt for the Calculator "(" button on the scientific and programmer operator keypad. %1 is the localized count of open parenthesis, e.g. "2".</comment>
+  </data>
+  <data name="NoRightParenthesisAdded_Announcement" xml:space="preserve">
+    <value>沒有需要補齊的左括弧。</value>
+    <comment>{Locked="%1"} Screen reader prompt for the Calculator when the ")" button on the scientific and programmer operator keypad cannot be added to the equation. e.g. "1+)".</comment>
+  </data>
   <data name="ftoeButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>科學記號標記法</value>
     <comment>Screen reader prompt for the Calculator F-E the scientific operator keypad</comment>
@@ -2277,9 +2285,9 @@
     <value>Microsoft 隱私權聲明</value>
     <comment>Displayed on a link to the Microsoft Privacy Statement on the About panel</comment>
   </data>
-  <data name="AboutControlCopyright.Text" xml:space="preserve">
-    <value>© 2018 Microsoft. 著作權所有，並保留一切權利。</value>
-    <comment>Copyright statement, displayed on the About panel</comment>
+  <data name="AboutControlCopyright" xml:space="preserve">
+    <value>© %1 Microsoft 著作權所有，保留一切權利。</value>
+    <comment>{Locked="%1"}. Copyright statement, displayed on the About panel. %1 = the current year (4 digits)</comment>
   </data>
   <data name="AboutButton.Content" xml:space="preserve">
     <value>關於</value>
@@ -2898,5 +2906,21 @@
   <data name="AboutControlServicesAgreement.Text" xml:space="preserve">
     <value>Microsoft 服務合約</value>
     <comment>Displayed on a link to the Microsoft Services Agreement in the about this app information</comment>
+  </data>
+  <data name="UnitAbbreviation_Pyeong" xml:space="preserve">
+    <value>坪</value>
+    <comment>An abbreviation for a measurement unit of area.</comment>
+  </data>
+  <data name="UnitName_Pyeong" xml:space="preserve">
+    <value>坪</value>
+    <comment>A measurement unit for area.</comment>
+  </data>
+  <data name="CalculationResultScrollLeft.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>向左捲動計算結果</value>
+    <comment>Automation label for the "Scroll Left" button that appears when a calculation result is too large to fit in calculation result text box.</comment>
+  </data>
+  <data name="CalculationResultScrollRight.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>向右捲動計算結果</value>
+    <comment>Automation label for the "Scroll Right" button that appears when a calculation result is too large to fit in calculation result text box.</comment>
   </data>
 </root>
